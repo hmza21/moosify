@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Download
+{% endblock %}
+
+{% block content %}
+  <h1>Download page</h1>
+  <form action="{% url 'download:download' %}" method="get">
+    <input type="text" name="url" placeholder="Paste Spotify link..." />
+    <input type="submit" value="Download" />
+  </form>
+
+  <hr />
+
+  <h2>Downloads</h2>
+
+  {% for track in tracks %}
+    <img src="{{ track.1.cover_art_url }}" style="width: 150px;" />
+    <h3><a href="{{ track.0.spotify_url }}" target="_blank">{{ track.1 }}</a></h3>
+    <audio src="/media/{{ track.0.filename }}" controls></audio>
+    <form action="{% url 'download:download' %}" id="download-form">
+      <input type="hidden" name="url" value="{{ track.1.url }}" />
+      <input type="submit" value="Download" />
+    </form>
+  {% endfor %}
+{% endblock %}

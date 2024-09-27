@@ -1,0 +1,8 @@
+__pycache__
+.env
+db.sqlite3
+media
+static
+venv
+test.py
+.cache
