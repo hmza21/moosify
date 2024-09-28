@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 
+{% block stylesheets %}
+  {% load static %}
+  <link rel="stylesheet" type='text/css' href="{% static 'css/core/index.css' %}">
+{% endblock %}
+
 {% block title %}
   Home
 {% endblock %}
 
 {% block content %}
-  <h1>Welcome to Moosify!</h1>
-  <p>Right now, Moosify is in closed Beta, and access is given by the developer alone.</p>
+  <div class='content'>
+    <h1 class='title'>Welcome to <strong>Moosify!</strong></h1>
+    <p class='description'>Right now, Moosify is in closed Beta, and access is given by the developer alone. If you were given an account, proceed to <a href="{% url 'core:login' %}">login </a></p>
+  </div>
 {% endblock %}

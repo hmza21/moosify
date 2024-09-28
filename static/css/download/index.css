@@ -1,0 +1,62 @@
+h1 {
+    font-weight: normal;
+}
+
+.content {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 2rem;
+}
+
+.description {
+    text-align: center;
+    margin: 0 3rem;
+    padding: 2rem;
+    background-color: var(--tertiary);
+    border-radius: 1rem;
+    margin-bottom: 10rem;
+}
+
+.description a {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#download-form {
+    margin-bottom: 2rem;
+}
+
+#download {
+    padding: 0.2rem 0.5rem;
+    border: 2px solid var(--tertiary);
+    border-radius: 0.5rem;
+}
+
+#download-submit {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--tertiary);
+    color: var(--primary);
+    cursor: pointer;
+    margin: 0;
+}
+
+.song {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 2px solid var(--tertiary);
+    margin-bottom: 1rem;
+}

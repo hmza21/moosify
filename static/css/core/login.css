@@ -1,0 +1,57 @@
+.content {
+    margin: 5rem 0;
+    margin-bottom: 15rem;
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.content * {
+    width: 100%;
+}
+
+.header {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--tertiary);
+    padding-bottom: 0.5rem;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#login-form div {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form label {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+    padding: 7px 0;
+    text-align:justify;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid var(--tertiary);
+    border-radius: 0.5rem;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid var(--tertiary);
+    border-radius: 0.5rem;
+    background-color: var(--tertiary);
+    color: var(--primary);
+    font-weight: bold;
+    cursor: pointer;
+}
