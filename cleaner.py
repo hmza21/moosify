@@ -45,7 +45,7 @@ def fetch_tracks() -> tuple:
     return result
 
 try:
-    print("Starting cleaner.py...")
+    logger.info("Starting cleaner.py...")
     while True:
         result = fetch_tracks()
 
@@ -53,12 +53,12 @@ try:
             file = Path(MEDIA_ROOT, f"{track[2]}".replace(":", "□").replace("/", "□"))
 
             if not file.is_file(): # if file does not exist
-                print('Deleted: ' + track[2] + '; file does not exist')
+                logger.info(f"Deleted: {track[2]}; file does not exist")
                 delete_track(track[0])
 
             else:
                 if track[5]: # if track has been downloaded
-                    print('Deleted: ' + track[2] + '; track has been downloaded')
+                    logger.info(f"Deleted: {track[2]}; track has been downloaded")
                     delete_track(track[0])
                     remove(file)
 
@@ -67,7 +67,7 @@ try:
                     hours_since_downloaded = (datetime.now(utc) - tz.localize(created_at)).seconds / 60 / 60
 
                     if hours_since_downloaded >= 2: # if track has been in the database for more than 2 hours
-                        print('Deleted: ' + track[2] + '; track has been in the database for more than 2 hours')
+                        logger.info(f"Deleted: {track[2]}; track has been in the database for more than 2 hours")
                         delete_track(track[0])
                         remove(file)
 
