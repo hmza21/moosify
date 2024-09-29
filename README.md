@@ -2,6 +2,10 @@
 
 **Moosify** is a Spotify downloader based on [Savify](https://github.com/LaurenceRawlings/savify). For now, access is limited to premade accounts given by the developer.
 
+## To-do
+
+* [ ] Add support for albums and playlists
+
 ## Requirements
 
 * Python 3.10.12 or later
