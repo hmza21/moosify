@@ -6,3 +6,4 @@ media
 venv
 test.py
 .cache
+cookies.txt

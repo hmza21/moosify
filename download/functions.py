@@ -4,7 +4,7 @@ from typing import List
 from dotenv import load_dotenv
 from savify.track import Track
 from savify.utils import PathHolder
-from moosify.settings import MEDIA_ROOT
+from moosify.settings import MEDIA_ROOT, BASE_DIR
 from savify import Savify, Quality, Format
 
 def download(url: str) -> list:
@@ -20,6 +20,7 @@ def download(url: str) -> list:
         download_format = Format.MP3,
         path_holder = PathHolder(downloads_path = MEDIA_ROOT),
         logger = logger,
+        ydl_options = { 'cookiefile': str(BASE_DIR / 'cookies.txt') }
     )
 
     savify.download(url)
