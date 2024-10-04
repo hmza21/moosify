@@ -2,9 +2,11 @@ from django.views.generic import View
 from django.shortcuts import render, redirect
 from django.core.handlers.wsgi import WSGIRequest
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 from .forms import UserEditForm, PasswordEditForm
 
+@login_required
 def index(request: WSGIRequest):
     return render(request, 'account/index.html')
 

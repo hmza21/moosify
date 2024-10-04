@@ -1,8 +1,9 @@
 :root {
-    --background: #433878;
-    --tertiary: #7E60BF;
-    --secondary: #E4B1F0;
+    --background: #10002b;
+    --tertiary: #5a189a;
+    --secondary: #e0aaff;
     --primary: #FFE1FF;
+    --panel: #240046;
     --danger: #db0000;
     --white: #f0f0f0;
 }
@@ -28,6 +29,10 @@ a:hover, button:hover, input:hover {
     color: var(--secondary);
 }
 
+nav::-webkit-scrollbar {
+    display: none;
+}
+
 nav, footer {
     display: flex;
     gap: 1rem;
@@ -35,6 +40,9 @@ nav, footer {
     background-color: var(--tertiary);
     align-items: center;
     margin: 0;
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 footer {

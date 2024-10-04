@@ -1,7 +1,10 @@
-from django.shortcuts import render, redirect
+from django.views import View
+from django.shortcuts import render
 from django.core.handlers.wsgi import WSGIRequest
-
-from download.models import Track
 
 def index(request: WSGIRequest):
     return render(request, 'core/index.html')
+
+class RequestView(View):
+    def get(self, request: WSGIRequest):
+        return render(request, 'core/request.html')

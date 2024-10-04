@@ -5,27 +5,21 @@ from django.contrib.auth.forms import UserChangeForm, UsernameField, PasswordCha
 class UserEditForm(UserChangeForm):
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email')
+        fields = ('username', 'email')
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
     
     username = UsernameField(widget=TextInput(attrs={
         'class': 'form-control',
         'placeholder': 'Username'
-    }))
-    
-    first_name = CharField(widget=TextInput(attrs={
-        'class': 'form-control',
-        'placeholder': 'First Name'
-    }))
-    
-    last_name = CharField(widget=TextInput(attrs={
-        'class': 'form-control',
-        'placeholder': 'Last Name'
-    }))
+    }), label='Username')
     
     email = CharField(widget=TextInput(attrs={
         'class': 'form-control',
         'placeholder': 'Email'
-    }))
+    }), label='Email')
     
     password = None
     
@@ -33,18 +27,22 @@ class PasswordEditForm(PasswordChangeForm):
     class Meta:
         model = User
         fields = ('old_password', 'new_password1', 'new_password2')
+        
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""
     
     old_password = CharField(widget=PasswordInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Old Password'
-    }))
+        'placeholder': 'Old password'
+    }), label='Old Password')
     
     new_password1 = CharField(widget=PasswordInput(attrs={
         'class': 'form-control',
-        'placeholder': 'New Password'
-    }))
+        'placeholder': 'New password'
+    }), label='New Password')
     
     new_password2 = CharField(widget=PasswordInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Confirm New Password'
-    }))
+        'placeholder': 'Confirm new password'
+    }), label='Confirm New Password')
